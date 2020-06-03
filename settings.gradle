@@ -1,0 +1,2 @@
+rootProject.name='TryIntents'
+include ':app'
