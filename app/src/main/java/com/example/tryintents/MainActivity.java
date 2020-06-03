@@ -13,12 +13,14 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText mNameEntry;
     private Button mDoSomethingCoolButton;
+    private Button mGoToImplicit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mDoSomethingCoolButton = findViewById(R.id.b_do_something_cool);
+        mGoToImplicit = findViewById(R.id.b_gotoImplicit);
         mNameEntry =  findViewById(R.id.et_text_entry);
 
         mDoSomethingCoolButton.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
                 Class destinationActivity = ChildActivity.class;
                 Intent startChildActivityIntent = new Intent(context, destinationActivity);
                 startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textEntered);
+                startActivity(startChildActivityIntent);
+            }
+        });
+
+        mGoToImplicit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = MainActivity.this;
+                Class destinationActivity = ImplicitActivity.class;
+                Intent startChildActivityIntent = new Intent(context, destinationActivity);
                 startActivity(startChildActivityIntent);
             }
         });

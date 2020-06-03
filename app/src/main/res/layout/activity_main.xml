@@ -21,4 +21,10 @@
         android:layout_height="wrap_content"
         android:text="Click Me!"/>
 
+    <Button
+        android:id="@+id/b_gotoImplicit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Explicit"/>
+
 </LinearLayout>
